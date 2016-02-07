@@ -18,7 +18,7 @@ else:
     monkey.patch_all(thread=False)
 # Not thread: pyfilesystem and systray icon, Not subprocess: Gevent 1.1+
 
-update_after_shutdown = False  # If set True then update and restart zeronet after main loop ended
+update_after_shutdown = False  # If set True then update and restart utraweb after main loop ended
 
 # Load config
 from Config import config
@@ -331,7 +331,7 @@ class Actions(object):
 
 
 actions = Actions()
-# Starts here when running zeronet.py
+# Starts here when running utraweb.py
 
 
 def start():

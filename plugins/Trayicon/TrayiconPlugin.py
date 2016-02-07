@@ -23,7 +23,7 @@ class ActionsPlugin(object):
 
         icon = notificationicon.NotificationIcon(
             os.path.join(os.path.dirname(os.path.abspath(__file__).decode(fs_encoding)), 'trayicon.ico'),
-            "ZeroNet %s" % config.version
+            "utraweb %s" % config.version
         )
         self.icon = icon
 
@@ -46,12 +46,12 @@ class ActionsPlugin(object):
             (self.titleConsole, self.toggleConsole),
             (self.titleAutorun, self.toggleAutorun),
             "--",
-            ("ZeroNet Twitter", lambda: self.opensite("https://twitter.com/HelloZeroNet")),
-            ("ZeroNet Reddit", lambda: self.opensite("http://www.reddit.com/r/zeronet/")),
-            ("ZeroNet Github", lambda: self.opensite("https://github.com/HelloZeroNet/ZeroNet")),
-            ("Report bug/request feature", lambda: self.opensite("https://github.com/HelloZeroNet/ZeroNet/issues")),
+            ("utraweb Twitter", lambda: self.opensite("https://twitter.com/Helloutraweb")),
+            ("utraweb Reddit", lambda: self.opensite("http://www.reddit.com/r/utraweb/")),
+            ("utraweb Github", lambda: self.opensite("https://github.com/Helloutraweb/utraweb")),
+            ("Report bug/request feature", lambda: self.opensite("https://github.com/Helloutraweb/utraweb/issues")),
             "--",
-            ("!Open ZeroNet", lambda: self.opensite("http://%s:%s" % (ui_ip, config.ui_port))),
+            ("!Open utraweb", lambda: self.opensite("http://%s:%s" % (ui_ip, config.ui_port))),
             "--",
             ("Quit", self.quit),
 
@@ -107,7 +107,7 @@ class ActionsPlugin(object):
             self.console = True
 
     def getAutorunPath(self):
-        return "%s\\zeronet.cmd" % winfolders.get(winfolders.STARTUP)
+        return "%s\\utraweb.cmd" % winfolders.get(winfolders.STARTUP)
 
     def formatAutorun(self):
         args = sys.argv[:]
@@ -117,7 +117,7 @@ class ActionsPlugin(object):
         cmd = " ".join(args)
 
         # Dont open browser on autorun
-        cmd = cmd.replace("start.py", "zeronet.py").replace('"--open_browser"', "").replace('"default_browser"', "").strip()
+        cmd = cmd.replace("start.py", "utraweb.py").replace('"--open_browser"', "").replace('"default_browser"', "").strip()
 
         return "@echo off\ncd /D %s\n%s" % (os.getcwd(), cmd)
 
@@ -127,9 +127,9 @@ class ActionsPlugin(object):
 
     def titleAutorun(self):
         if self.isAutorunEnabled():
-            return "+Start ZeroNet when Windows starts"
+            return "+Start utraweb when Windows starts"
         else:
-            return "Start ZeroNet when Windows starts"
+            return "Start utraweb when Windows starts"
 
     def toggleAutorun(self):
         if self.isAutorunEnabled():

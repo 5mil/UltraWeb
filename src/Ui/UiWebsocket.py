@@ -36,7 +36,7 @@ class UiWebsocket(object):
             if sys.modules["main"].file_server.port_opened is True:
                 self.site.notifications.append([
                     "done",
-                    "Congratulation, your port <b>%s</b> is opened.<br>You are full member of ZeroNet network!" %
+                    "Congratulation, your port <b>%s</b> is opened.<br>You are full member of utraweb network!" %
                     config.fileserver_port,
                     10000
                 ])
@@ -45,7 +45,7 @@ class UiWebsocket(object):
                     "error",
                     """
                     Your network connection is restricted. Please, open <b>%s</b> port<br>
-                    on your router to become full member of ZeroNet network.
+                    on your router to become full member of utraweb network.
                     """ % config.fileserver_port,
                     0
                 ])

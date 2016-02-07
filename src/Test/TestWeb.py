@@ -29,18 +29,18 @@ class TestWeb:
         assert "Forbidden" in urllib.urlopen("%s/media/../config.py" % site_url).read()
         assert "Forbidden" in urllib.urlopen("%s/media/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../sites.json" % site_url).read()
         assert "Forbidden" in urllib.urlopen("%s/media/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/..//sites.json" % site_url).read()
-        assert "Forbidden" in urllib.urlopen("%s/media/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../../zeronet.py" % site_url).read()
+        assert "Forbidden" in urllib.urlopen("%s/media/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../../utraweb.py" % site_url).read()
         assert "Forbidden" in urllib.urlopen("%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../sites.json" % site_url).read()
         assert "Forbidden" in urllib.urlopen("%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/..//sites.json" % site_url).read()
-        assert "Forbidden" in urllib.urlopen("%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../../zeronet.py" % site_url).read()
+        assert "Forbidden" in urllib.urlopen("%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/../../utraweb.py" % site_url).read()
 
     def testHomepage(self, browser, site_url):
         browser.get("%s" % site_url)
-        assert browser.title == "ZeroHello - ZeroNet"
+        assert browser.title == "ZeroHello - utraweb"
 
     def testLinkSecurity(self, browser, site_url):
         browser.get("%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/test/security.html" % site_url)
-        assert browser.title == "ZeroHello - ZeroNet"
+        assert browser.title == "ZeroHello - utraweb"
         assert browser.current_url == "%s/1EU1tbG9oC1A8jz2ouVwGZyQ5asrNsE4Vr/test/security.html" % site_url
 
         # Switch to inner frame

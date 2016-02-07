@@ -4,13 +4,13 @@
 # Included modules
 import sys
 
-# ZeroNet Modules
-import zeronet
+# utraweb Modules
+import utraweb
 
 
 def main():
     sys.argv += ["--open_browser", "default_browser"]
-    zeronet.main()
+    utraweb.main()
 
 if __name__ == '__main__':
     main()

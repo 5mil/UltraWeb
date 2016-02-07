@@ -26,9 +26,9 @@ def lookupDomain(domain):
 	domain_json = json.loads(domain_object['value'])
 
 	try:
-		domain_address = domain_json["zeronet"][subdomain]
+		domain_address = domain_json["utraweb"][subdomain]
 	except:
-		#domain exists but doesn't have any zeronet value
+		#domain exists but doesn't have any utraweb value
 		return None
 
 	return domain_address

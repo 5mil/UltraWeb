@@ -53,11 +53,11 @@ class SiteManagerPlugin(object):
 			with gevent.Timeout(5, Exception("Timeout: 5s")):
 				res = Http.get("https://api.dnschain.net/v1/namecoin/key/%s" % top_domain).read()
 				data = json.loads(res)["data"]["value"]
-				if "zeronet" in data:
-					for key, val in data["zeronet"].iteritems():
+				if "utraweb" in data:
+					for key, val in data["utraweb"].iteritems():
 						self.dns_cache[key+"."+top_domain] = [val, time.time()+60*60*5] # Cache for 5 hours
 					self.saveDnsCache()
-					return data["zeronet"].get(sub_domain)
+					return data["utraweb"].get(sub_domain)
 			# Not found
 			return address
 		except Exception, err:
@@ -76,10 +76,10 @@ class SiteManagerPlugin(object):
 			with gevent.Timeout(5, Exception("Timeout: 5s")):
 				res = Http.get("https://dnschain.info/bit/d/%s" % re.sub("\.bit$", "", top_domain)).read()
 				data = json.loads(res)["value"]
-				for key, val in data["zeronet"].iteritems():
+				for key, val in data["utraweb"].iteritems():
 					self.dns_cache[key+"."+top_domain] = [val, time.time()+60*60*5] # Cache for 5 hours
 				self.saveDnsCache()
-				return data["zeronet"].get(sub_domain)
+				return data["utraweb"].get(sub_domain)
 			# Not found
 			return address
 		except Exception, err:

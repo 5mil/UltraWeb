@@ -247,7 +247,7 @@ class Wrapper
 		if @ws.ws.readyState == 1 and not @site_info # Ws opened
 			@reloadSiteInfo()
 		else if @site_info and @site_info.content?.title?
-			window.document.title = @site_info.content.title+" - ZeroNet"
+			window.document.title = @site_info.content.title+" - utraweb"
 			@log "Setting title to", window.document.title
 
 
@@ -276,7 +276,7 @@ class Wrapper
 							@notifications.add("size_limit", "done", res, 5000)
 
 			if site_info.content
-				window.document.title = site_info.content.title+" - ZeroNet"
+				window.document.title = site_info.content.title+" - utraweb"
 				@log "Setting title to", window.document.title
 
 
@@ -293,7 +293,7 @@ class Wrapper
 					@loading.hideScreen()
 					if not @site_info then @reloadSiteInfo()
 					if site_info.content
-						window.document.title = site_info.content.title+" - ZeroNet"
+						window.document.title = site_info.content.title+" - utraweb"
 						@log "Required file done, setting title to", window.document.title
 					if not $(".loadingscreen").length # Loading screen already removed (loaded +2sec)
 						@notifications.add("modified", "info", "New version of this page has just released.<br>Reload to see the modified content.")

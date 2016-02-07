@@ -113,7 +113,7 @@ class Config(object):
 
         self.parser.add_argument('--batch', help="Batch mode (No interactive input for commands)", action='store_true')
 
-        self.parser.add_argument('--config_file', help='Path of config file', default="zeronet.conf", metavar="path")
+        self.parser.add_argument('--config_file', help='Path of config file', default="utraweb.conf", metavar="path")
         self.parser.add_argument('--data_dir', help='Path of data directory', default="data", metavar="path")
         self.parser.add_argument('--log_dir', help='Path of logging directory', default="log", metavar="path")
 
@@ -148,7 +148,7 @@ class Config(object):
         self.parser.add_argument('--coffeescript_compiler', help='Coffeescript compiler for developing', default=coffeescript,
                                  metavar='executable_path')
 
-        self.parser.add_argument('--version', action='version', version='ZeroNet %s r%s' % (self.version, self.rev))
+        self.parser.add_argument('--version', action='version', version='utraweb %s r%s' % (self.version, self.rev))
 
         return self.parser
 
@@ -217,7 +217,7 @@ class Config(object):
         self.setAttributes()
 
         if silent:  # Restore original functions
-            if self.parser.exited and self.action == "main":  # Argument parsing halted, don't start ZeroNet with main action
+            if self.parser.exited and self.action == "main":  # Argument parsing halted, don't start utraweb with main action
                 self.action = None
             self.parser._print_message = original_print_message
             self.parser.exit = original_exit
@@ -242,7 +242,7 @@ class Config(object):
     # Parse config file
     def parseConfig(self, argv):
         # Find config file path from parameters
-        config_file = "zeronet.conf"
+        config_file = "utraweb.conf"
         if "--config_file" in argv:
             config_file = argv[argv.index("--config_file") + 1]
         # Load config file

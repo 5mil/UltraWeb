@@ -1084,7 +1084,7 @@ jQuery.extend( jQuery.easing,
       if (this.ws.ws.readyState === 1 && !this.site_info) {
         return this.reloadSiteInfo();
       } else if (this.site_info && (((_ref = this.site_info.content) != null ? _ref.title : void 0) != null)) {
-        window.document.title = this.site_info.content.title + " - ZeroNet";
+        window.document.title = this.site_info.content.title + " - utraweb";
         return this.log("Setting title to", window.document.title);
       }
     };
@@ -1118,7 +1118,7 @@ jQuery.extend( jQuery.easing,
             }
           }
           if (site_info.content) {
-            window.document.title = site_info.content.title + " - ZeroNet";
+            window.document.title = site_info.content.title + " - utraweb";
             return _this.log("Setting title to", window.document.title);
           }
         };
@@ -1137,7 +1137,7 @@ jQuery.extend( jQuery.easing,
               this.reloadSiteInfo();
             }
             if (site_info.content) {
-              window.document.title = site_info.content.title + " - ZeroNet";
+              window.document.title = site_info.content.title + " - utraweb";
               this.log("Required file done, setting title to", window.document.title);
             }
             if (!$(".loadingscreen").length) {

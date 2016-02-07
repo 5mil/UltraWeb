@@ -4,7 +4,7 @@
 # This is a combination of http://pastebin.com/bQtdDzHx and
 # https://github.com/Bitmessage/PyBitmessage/blob/master/src/pyelliptic/openssl.py
 # that doesn't crash on OSX.
-# Long message bug fixed by ZeroNet
+# Long message bug fixed by utraweb
 
 import ctypes
 import ctypes.util
@@ -416,7 +416,7 @@ def getMessagePubkey(message, sig):
     pkey = ssl.EC_KEY_new_by_curve_name(NID_secp256k1)
     if type(pkey) is not int and not pkey.value:
         raise Exception(
-            "OpenSSL %s (%s) EC_KEY_new_by_curve_name failed: %s, probably your OpenSSL lib does not support secp256k1 elliptic curve. Please check: https://github.com/HelloZeroNet/ZeroNet/issues/132" %
+            "OpenSSL %s (%s) EC_KEY_new_by_curve_name failed: %s, probably your OpenSSL lib does not support secp256k1 elliptic curve. Please check: https://github.com/Helloutraweb/utraweb/issues/132" %
             (openssl_version, ssl._lib._name, pkey.value)
         )
     eckey = SetCompactSignature(pkey, Hash(msg_magic(message)), sig)

@@ -6,10 +6,10 @@ from Db import Db
 
 class TestDb:
     def testCheckTables(self):
-        db_path = "%s/zeronet.db" % config.data_dir
+        db_path = "%s/utraweb.db" % config.data_dir
         schema = {
             "db_name": "TestDb",
-            "db_file": "%s/zeronet.db" % config.data_dir,
+            "db_file": "%s/utraweb.db" % config.data_dir,
             "map": {
                 "data.json": {
                     "to_table": {
@@ -70,10 +70,10 @@ class TestDb:
         os.unlink(db_path)
 
     def testQueries(self):
-        db_path = "%s/zeronet.db" % config.data_dir
+        db_path = "%s/utraweb.db" % config.data_dir
         schema = {
             "db_name": "TestDb",
-            "db_file": "%s/zeronet.db" % config.data_dir,
+            "db_file": "%s/utraweb.db" % config.data_dir,
             "map": {
                 "data.json": {
                     "to_table": {

@@ -54,7 +54,7 @@ class FileServer(ConnectionServer):
 
         self.log.info("Trying to open port using UpnpPunch...")
         try:
-            upnp_punch = UpnpPunch.open_port(self.port, 'ZeroNet')
+            upnp_punch = UpnpPunch.open_port(self.port, 'utraweb')
             upnp_punch = True
         except Exception, err:
             self.log.error("UpnpPunch run error: %s" % Debug.formatException(err))

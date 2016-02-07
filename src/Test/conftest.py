@@ -122,7 +122,7 @@ def site_url():
     try:
         urllib.urlopen(SITE_URL).read()
     except Exception, err:
-        raise pytest.skip("Test requires zeronet client running: %s" % err)
+        raise pytest.skip("Test requires utraweb client running: %s" % err)
     return SITE_URL
 
 

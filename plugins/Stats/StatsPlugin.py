@@ -392,7 +392,7 @@ class UiRequestPlugin(object):
         </style>
         """
 
-        yield "Benchmarking ZeroNet %s (rev%s) Python %s on: %s...<br>" % (config.version, config.rev, sys.version, sys.platform)
+        yield "Benchmarking utraweb %s (rev%s) Python %s on: %s...<br>" % (config.version, config.rev, sys.version, sys.platform)
 
         t = time.time()
 

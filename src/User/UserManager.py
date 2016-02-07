@@ -2,7 +2,7 @@
 import json
 import logging
 
-# ZeroNet Modules
+# utraweb Modules
 from User import User
 from Plugin import PluginManager
 from Config import config

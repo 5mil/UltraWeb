@@ -337,7 +337,7 @@ class ContentManager(object):
             self.log.info("File %s not exist yet, loading default values..." % inner_path)
             content = {"files": {}, "signs": {}}  # Default content.json
             if inner_path == "content.json":  # It's the root content.json, add some more fields
-                content["title"] = "%s - ZeroNet_" % self.site.address
+                content["title"] = "%s - utraweb_" % self.site.address
                 content["description"] = ""
                 content["signs_required"] = 1
                 content["ignore"] = ""
@@ -380,7 +380,7 @@ class ContentManager(object):
         new_content["modified"] = time.time()  # Add timestamp
         if inner_path == "content.json":
             new_content["address"] = self.site.address
-            new_content["zeronet_version"] = config.version
+            new_content["utraweb_version"] = config.version
             new_content["signs_required"] = content.get("signs_required", 1)
 
         # Verify private key

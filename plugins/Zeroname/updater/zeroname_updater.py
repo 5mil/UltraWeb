@@ -10,9 +10,9 @@ from bitcoinrpc.authproxy import AuthServiceProxy
 
 def publish():
     print "* Signing..."
-    os.system("python zeronet.py siteSign %s %s" % (config["site"], config["privatekey"]))
+    os.system("python utraweb.py siteSign %s %s" % (config["site"], config["privatekey"]))
     print "* Publishing..."
-    os.system("python zeronet.py sitePublish %s" % config["site"])
+    os.system("python utraweb.py sitePublish %s" % config["site"])
 
 
 def processNameOp(domain, value):
@@ -23,11 +23,11 @@ def processNameOp(domain, value):
     except Exception, err:
         print "Json load error: %s" % err
         return False
-    if "zeronet" not in data:
-        print "No zeronet in ", data.keys()
+    if "utraweb" not in data:
+        print "No utraweb in ", data.keys()
         return False
-    if not isinstance(data["zeronet"], dict):
-        print "Not dict: ", data["zeronet"]
+    if not isinstance(data["utraweb"], dict):
+        print "Not dict: ", data["utraweb"]
         return False
     if not re.match("^[a-z0-9]([a-z0-9-]{0,62}[a-z0-9])?$", domain):
         print "Invalid domain: ", domain
@@ -40,7 +40,7 @@ def processNameOp(domain, value):
     # Note: Requires the file data/names.json to exist and contain "{}" to work
     names_raw = open(names_path, "rb").read()
     names = json.loads(names_raw)
-    for subdomain, address in data["zeronet"].items():
+    for subdomain, address in data["utraweb"].items():
         subdomain = subdomain.lower()
         address = re.sub("[^A-Za-z0-9]", "", address)
         print subdomain, domain, "->", address
@@ -96,14 +96,14 @@ else:
 config_path = namecoin_location + 'zeroname_config.json'
 if not os.path.isfile(config_path):  # Create sample config
     open(config_path, "w").write(
-        json.dumps({'site': 'site', 'zeronet_path': '/home/zeronet/', 'privatekey': '', 'lastprocessed': 223911}, indent=2)
+        json.dumps({'site': 'site', 'utraweb_path': '/home/utraweb/', 'privatekey': '', 'lastprocessed': 223911}, indent=2)
     )
     print "Example config written to %s" % config_path
     sys.exit(0)
 
 config = json.load(open(config_path))
-names_path = "%s/data/%s/data/names.json" % (config["zeronet_path"], config["site"])
-os.chdir(config["zeronet_path"])  # Change working dir - tells script where Zeronet install is.
+names_path = "%s/data/%s/data/names.json" % (config["utraweb_path"], config["site"])
+os.chdir(config["utraweb_path"])  # Change working dir - tells script where utraweb install is.
 
 # Getting rpc connect details
 namecoin_conf = open(namecoin_location + "namecoin.conf").read()
@@ -125,7 +125,7 @@ print "Processing block from #%s to #%s..." % (config["lastprocessed"], last_blo
 for block_id in range(config["lastprocessed"], last_block + 1):
     processBlock(block_id)
 
-# processBlock(223911) # Testing zeronetwork.bit
+# processBlock(223911) # Testing utrawebwork.bit
 # processBlock(227052) # Testing brainwallets.bit
 # processBlock(236824) # Utf8 domain name (invalid should skip)
 # processBlock(236752) # Uppercase domain (invalid should skip)

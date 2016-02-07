@@ -493,7 +493,7 @@ class UiRequest(object):
 
         if details:
             details = {key: val for key, val in self.env.items() if hasattr(val, "endswith") and "COOKIE" not in key}
-            details["version_zeronet"] = "%s r%s" % (config.version, config.rev)
+            details["version_utraweb"] = "%s r%s" % (config.version, config.rev)
             details["version_python"] = sys.version
             details["version_gevent"] = gevent.__version__
             details["plugins"] = PluginManager.plugin_manager.plugin_names
@@ -506,7 +506,7 @@ class UiRequest(object):
                 </style>
                 <h1>%s</h1>
                 <h2>%s</h3>
-                <h3>Please <a href="https://github.com/HelloZeroNet/ZeroNet/issues" target="_blank">report it</a> if you think this an error.</h3>
+                <h3>Please <a href="https://github.com/Helloutraweb/utraweb/issues" target="_blank">report it</a> if you think this an error.</h3>
                 <h4>Details:</h4>
                 <pre>%s</pre>
             """ % (title, message, json.dumps(details, indent=4, sort_keys=True))

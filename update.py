@@ -18,7 +18,7 @@ def update():
     reload(ssl)
 
     print "Downloading.",
-    file = urllib.urlopen("https://github.com/HelloZeroNet/ZeroNet/archive/master.zip")
+    file = urllib.urlopen("https://github.com/Helloutraweb/utraweb/archive/master.zip")
     data = StringIO.StringIO()
     while True:
         buff = file.read(1024 * 16)
@@ -44,7 +44,7 @@ def update():
     for inner_path in zip.namelist():
         inner_path = inner_path.replace("\\", "/")  # Make sure we have unix path
         print ".",
-        dest_path = inner_path.replace("ZeroNet-master/", "")
+        dest_path = inner_path.replace("utraweb-master/", "")
         if not dest_path:
             continue
 

@@ -1120,7 +1120,7 @@
       return $(".certselect").on("click", (function(_this) {
         return function() {
           if (Page.server_info.rev < 160) {
-            Page.cmd("wrapperNotification", ["error", "Comments requires at least ZeroNet 0.3.0 Please upgade!"]);
+            Page.cmd("wrapperNotification", ["error", "Comments requires at least utraweb 0.3.0 Please upgade!"]);
           } else {
             Page.cmd("certSelect", [["zeroid.bit"]]);
           }

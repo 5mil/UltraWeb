@@ -101,7 +101,7 @@ def _get_local_ip():
     s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     # not using <broadcast> because gevents getaddrinfo doesn't like that
     # using port 1 as per hobbldygoop's comment about port 0 not working on osx:
-    # https://github.com/sirMackk/ZeroNet/commit/fdcd15cf8df0008a2070647d4d28ffedb503fba2#commitcomment-9863928
+    # https://github.com/sirMackk/utraweb/commit/fdcd15cf8df0008a2070647d4d28ffedb503fba2#commitcomment-9863928
     s.connect(('239.255.255.250', 1))
     return s.getsockname()[0]
 
@@ -235,4 +235,4 @@ if __name__ == "__main__":
     monkey.patch_socket()
 
     logging.getLogger().setLevel(logging.DEBUG)
-    print open_port(15441, "ZeroNet")
+    print open_port(15441, "utraweb")
