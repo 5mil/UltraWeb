@@ -1,4 +1,4 @@
-# utraweb [![Build Status](https://travis-ci.org/Helloutraweb/utraweb.svg?branch=master)](https://travis-ci.org/Helloutraweb/utraweb) [![Documentation](https://img.shields.io/badge/docs-faq-brightgreen.svg)](https://utraweb.readthedocs.org/en/latest/faq/) [![Help](https://img.shields.io/badge/keep_this_project_alive-donate-yellow.svg)](https://utraweb.readthedocs.org/en/latest/help_utraweb/donate/)
+# utraweb [![Build Status](https://travis-ci.org/Helloutraweb/utraweb.svg?branch=master)](https://travis-ci.org/Helloutraweb/utraweb) [![Documentation](https://img.shields.io/badge/docs-faq-brightgreen.svg)](https://utraweb.readthedocs.org/en/latest/faq/) [![Help](https://img.shields.io/badge/keep_this_project_alive-donate-yellow.svg)](Bitcoin:1JVGnW4aTv3oAfGXny8MJZ2fN7LSnxL689)
 
 Decentralized websites using Bitcoin crypto and the BitTorrent network - http://utraweb.io
 
