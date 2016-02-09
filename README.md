@@ -172,8 +172,7 @@ Site:13DNDk..bhC2 Successfuly published to 3 peers
 
 ## If you want to help keep this project alive
 
-- Bitcoin: 1QDhxQ6PraUZa21ET5fYUCPgdrwBomnFgX
-- Paypal: https://utraweb.readthedocs.org/en/latest/help_utraweb/donate/
+- Bitcoin: 1JVGnW4aTv3oAfGXny8MJZ2fN7LSnxL689
 
 ### Sponsors
 
